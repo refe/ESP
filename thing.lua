@@ -111,8 +111,15 @@ conn:on("receive", function(conn, payload)success = true print(payload)end)
 conn:on("connection",
    function(conn, payload)
    print("Connected")
-   conn:send('GET /update?key='..WRITEKEY..'&field4='..humi..'&field3='..temp..'&field1='..(t/10)..'&field5='..mmhg..'&field2='..mbar..'&field6='..Td..'&field7='..hi..'HTTP/1.1\r\n\
-   Host: api.thingspeak.com\r\nAccept: */*\r\nUser-Agent: Mozilla/4.0 (compatible; esp8266 Lua; Windows NT 5.1)\r\n\r\n')end)
+   conn:send('GET /update?key='..WRITEKEY..
+      '&field4='..humi..
+      '&field3='..temp..
+      '&field1='..(t/10)..
+      '&field5='..mmhg..
+      '&field2='..mbar..
+      '&field6='..Td..
+      '&field7='..hi..
+      'HTTP/1.1\r\n\Host: api.thingspeak.com\r\nAccept: */*\r\nUser-Agent: Mozilla/4.0 (compatible; esp8266 Lua; Windows NT 5.1)\r\n\r\n')end)
 conn:connect(80,'api.thingspeak.com')
    conn:on("disconnection", function(conn, payload) print('Disconnected')
         print("Going to deep sleep for "..(600).." seconds") 
