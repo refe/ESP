@@ -17,7 +17,7 @@ client_netmask="255.255.255.0"
 client_gateway="192.x.x.x" -- gateway
 
 -- Connect to the wifi network
-wifi.setmode(wifi.STATION) 
+wifi.setmode(wifi.STATIONAP) 
 wifi.setphymode(wifi_signal_mode)
 wifi.sta.config(wifi_SSID, wifi_password)
 wifi.sta.connect()
