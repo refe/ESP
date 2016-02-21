@@ -1,3 +1,4 @@
+-- https://github.com/refe/ESP-03-thingspeak
 print('init.lua ver 1.2')
 --Settings
 --- WIFI ---
