@@ -7,6 +7,14 @@ SCL_PIN = 5 -- BMP180 scl pin, GPIO14
    humi=0
    temp=0
 
+-- read ESP-xx internal voltage provided by battery
+function ReadInVdd()
+    invddmv = adc.readvdd33();
+    invddv = (invddmv / 1000);
+    print("battery voltage: "..(invddv).." V");
+    -- return battery voltage in Volts
+end
+
 -- Load BMP180 and read temperature and presure
 function ReadBMP180()
 bmp085=require("bmp085")
@@ -131,5 +139,6 @@ ReadDHT()
 ReadBMP180()
 heatIndex(temp, humi)
 dewPointFast(temp, humi)
+ReadInVdd()
 sendTS(humi,temp)
-tmr.alarm(1,100000,1,function() ReadDHT() sendTS(humi,temp) node.dsleep(600000000-tmr.now()) end)
+tmr.alarm(1,100000,1,function() ReadDHT() ReadBMP180() heatIndex(temp, humi) dewPointFast(temp, humi) ReadInVdd() sendTS(humi,temp) node.dsleep(600000000-tmr.now()) end)
