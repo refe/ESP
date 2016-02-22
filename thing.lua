@@ -128,6 +128,7 @@ conn:on("connection",
       '&field2='..mbar..
       '&field6='..Td..
       '&field7='..hi..
+      '&field8='..invddv..
       'HTTP/1.1\r\n\Host: api.thingspeak.com\r\nAccept: */*\r\nUser-Agent: Mozilla/4.0 (compatible; esp8266 Lua; Windows NT 5.1)\r\n\r\n')end)
 conn:connect(80,'api.thingspeak.com')
    conn:on("disconnection", function(conn, payload) print('Disconnected')
