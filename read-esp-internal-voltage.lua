@@ -1,3 +1,4 @@
+-- https://github.com/refe/ESP-03-thingspeak
 WRITEKEY="xxxxxxxxxxxx"    -- set your thingspeak.com key
    tmr.delay(100000)
 function ReadInVdd()
