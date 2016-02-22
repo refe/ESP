@@ -1,4 +1,4 @@
-https://github.com/refe/ESP-03-thingspeak
+-- https://github.com/refe/ESP-03-thingspeak
 WRITEKEY="xxxxxxxxxxxxxxxxxxx"    -- set your thingspeak.com key
 PIN = 7                --  DHT22 data pin, GPIO13
 OSS = 2 -- oversampling setting (0-3)
