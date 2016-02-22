@@ -26,7 +26,7 @@ if client_ip ~= "" then
     wifi.sta.setip({ip=client_ip,netmask=client_netmask,gateway=client_gateway})
 end
 
-print('set mode=STATION (mode='..wifi.getmode()..')')
+print('set mode=STATIONAP (mode='..wifi.getmode()..')')
 print('MAC: ',wifi.sta.getmac())
 print('chip: ',node.chipid())
 print('heap: ',node.heap())
