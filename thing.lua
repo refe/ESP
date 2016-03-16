@@ -129,7 +129,7 @@ conn:on("connection",
       '&field6='..Td..
       '&field7='..hi..
       '&field8='..invddv..
-      ' HTTP/1.1\r\n')
+      ' \nHTTP/1.1\r\n')
    conn:send('Host: api.thingspeak.com\r\n')
    conn:send('Accept: */*\r\n')
    conn:send('User-Agent: Mozilla/4.0 (compatible; esp8266 Lua; Windows NT 5.1)\r\n\r\n')
